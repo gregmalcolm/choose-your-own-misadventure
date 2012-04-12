@@ -6,5 +6,8 @@ class Misadventure.Routers.SiteRouter extends Backbone.Router
   books: ->
     @booksView ||= new Misadventure.Views.BooksView
       el: $('.main')[0]
-#      collection: new Misadventure.Models.Books()
+      collection: new Misadventure.Collections.Books [
+        {name: "bob"}
+        {name: "jane"}
+      ]
     @booksView.render()

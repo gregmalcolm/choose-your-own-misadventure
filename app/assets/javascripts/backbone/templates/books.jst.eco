@@ -1,3 +1,12 @@
 <div id="books-wrap">
-  <b>Books!</b>
+  <b>Books</b>
+  <% if @books: %>
+    <ul>
+      <% for book in @books.pluck("name"): %>
+      <li>
+        <%= book %>
+      </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
