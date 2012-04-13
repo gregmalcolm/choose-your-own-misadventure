@@ -1,9 +1,9 @@
 <div id="books-wrap">
   <b>Books</b>
   <% if @books: %>
-    <ul>
+    <ul id="book_list">
       <% for book in @books.pluck("name"): %>
-      <li>
+      <li class="book_listing">
         <%= book %>
       </li>
       <% end %>

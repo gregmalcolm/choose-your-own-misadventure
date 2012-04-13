@@ -8,5 +8,5 @@ class Misadventure.BooksView extends Backbone.View
 
   render: ->
     $(@el).html(@template({books: @collection}))
-    $(@el).append subview.render().el for subview in @subviews
+    $('.book_listing').last().append subview.render().el for subview in @subviews
     @
