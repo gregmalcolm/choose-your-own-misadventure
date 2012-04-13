@@ -1,4 +1,4 @@
-class Misadventure.Collections.Books extends Backbone.Collection
-  model: Misadventure.Models.Book 
+class Misadventure.BookList extends Backbone.Collection
+  model: Misadventure.Book 
   url: -> "/"
 

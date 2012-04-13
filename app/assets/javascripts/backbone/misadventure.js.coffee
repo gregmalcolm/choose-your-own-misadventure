@@ -5,8 +5,4 @@
 #= require_tree ./views
 #= require_tree ./routers
 
-window.Misadventure =
-  Models: {}
-  Collections: {}
-  Routers: {}
-  Views: {}
+window.Misadventure = {}
