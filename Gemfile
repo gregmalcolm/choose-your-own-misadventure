@@ -39,6 +39,9 @@ group :development, :test do
 
   gem 'growl'
   gem 'rb-fsevent'
+end
+
+group :development do
   gem 'debugger'
 end
 
