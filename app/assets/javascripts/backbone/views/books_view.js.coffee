@@ -2,6 +2,7 @@ class Misadventure.BooksView extends Backbone.View
   template: JST["backbone/templates/books"] 
 
   initialize: ->
+    @collection.on 'add', @render, @
     @subviews = [
       new Misadventure.NewBookView collection: @collection
     ]

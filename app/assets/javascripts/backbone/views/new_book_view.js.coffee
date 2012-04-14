@@ -8,6 +8,7 @@ class Misadventure.NewBookView extends Backbone.View
 
   render: ->
     $(@el).html(@template())
+    @delegateEvents()
     @
 
   createBook: (event) ->
