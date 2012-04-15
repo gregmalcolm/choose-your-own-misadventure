@@ -19,5 +19,6 @@ cucumber:
 
 #for travis-ci
 postgres:
-  <<: *test
+  adapter: postgresql
+  database: misadventure_travis
   username: postgres
