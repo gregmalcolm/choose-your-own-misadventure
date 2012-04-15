@@ -1,24 +1,16 @@
 common: &common
   adapter: postgresql
-  username: misadventure
+  username: postgres
+  database: misadventure_<%=Rails.env%>
 
 development:
   <<: *common
-  database: misadventure_development
 
 test: &test
   <<: *common
-  database: misadventure_test
 
 production:
   <<: *common
-  database: misadventure_production
 
 cucumber:
   <<: *test
-
-#for travis-ci
-postgres:
-  adapter: postgresql
-  database: misadventure_travis
-  username: postgres
