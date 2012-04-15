@@ -1,7 +1,6 @@
 common: &common
   adapter: postgresql
   username: misadventure
-  password: misadventure # from psql setup, see Postgresql
 
 development:
   <<: *common
@@ -17,3 +16,8 @@ production:
 
 cucumber:
   <<: *test
+
+#for travis-ci
+postgres:
+  <<: *test
+  username: postgres
