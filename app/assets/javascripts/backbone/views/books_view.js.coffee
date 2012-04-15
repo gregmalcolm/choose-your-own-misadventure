@@ -3,11 +3,9 @@ class Misadventure.BooksView extends Backbone.View
 
   initialize: ->
     @collection.on 'add', @render, @
-    @subviews = [
-      new Misadventure.NewBookView collection: @collection
-    ]
+    @newTaskView = new Misadventure.NewBookView collection: @collection
 
   render: ->
     $(@el).html(@template({books: @collection}))
-    $('.book_listing').last().append subview.render().el for subview in @subviews
+    $('#book_list').append($("<li/>", { html: @newTaskView.render().el }))
     @

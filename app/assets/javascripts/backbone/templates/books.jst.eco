@@ -5,7 +5,7 @@
       <% for book in @books.pluck("name"): %>
       <li class="book_listing">
         <%= book %>
-      </li>
+      </li>      
       <% end %>
     </ul>
   <% end %>
