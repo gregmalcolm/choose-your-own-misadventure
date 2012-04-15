@@ -3,7 +3,7 @@ bundler_args: --without development
 before_script: 
   - "sh -e /etc/init.d/xvfb start && sudo aptitude -y -q install unzip chromium-browser"
   - psql -c 'create database misadventure_test;' -U postgres
-script: "bundle exec rake travis"
+script: "bundle exec rake db:migrate travis"
 rvm:
   - 1.9.3
 branches:
