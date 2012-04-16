@@ -1,3 +1,5 @@
+<% puts "Rails environment = #{Rails.env}" %>
+
 common: &common
   adapter: postgresql
   username: postgres

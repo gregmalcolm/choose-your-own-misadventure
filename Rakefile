@@ -4,4 +4,8 @@
 
 require File.expand_path('../config/application', __FILE__)
 
+#task :default => ['spec', 'jasmine:headless', 'cucumber']
+task :default => ['spec']
+
 Misadventure::Application.load_tasks
+

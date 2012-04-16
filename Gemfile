@@ -6,6 +6,7 @@ gem 'rails', '~> 3.2.1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'will_paginate', '~> 3.0'
 
 group :test do
   gem 'sqlite3'
@@ -26,15 +27,21 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'cucumber'
+  gem 'cucumber-rails'
   gem 'capybara-webkit'
   gem 'akephalos2', :require => 'akephalos'
+  gem 'database_cleaner'
 
   gem 'jasmine-headless-webkit'
+  #gem 'jasmine-headless-webkit', :git => 'git://github.com/johnbintz/jasmine-headless-webkit.git', :branch => 'master'
 
-  gem 'guard-rails-assets'
   gem 'guard-rspec'
   gem 'guard-cucumber'
   gem 'guard-jasmine-headless-webkit'
+  
+  gem 'factory_girl_rails'
+  
+  gem 'guard-rails-assets'
 
   gem 'growl'
   gem 'rb-fsevent'
@@ -43,22 +50,3 @@ end
 group :development do
   gem 'debugger'
 end
-
-group :test do
-  gem 'cucumber-rails'
-end
-
-
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
-

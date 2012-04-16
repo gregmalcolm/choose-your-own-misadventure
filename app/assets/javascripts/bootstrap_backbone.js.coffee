@@ -1,3 +1,6 @@
+# Bootstrap for loading javascript objcts on page load
+# Not 'bootstrap' as in 'bootstrap.js'
+
 unless window.jasmineSpecsAreRunning
   $.ajaxSetup
     beforeSend: (xhr) ->
@@ -6,3 +9,4 @@ unless window.jasmineSpecsAreRunning
   $ ->
     window.router = new Misadventure.SiteRouter()
     Backbone.history.start()
+    window.router.booksView.collection.reset(preloadModels.books)

@@ -1,8 +1,6 @@
 Feature: I'm picking a book
 
-  Background:
-    Given I'm on the books page
-
   Scenario: I'm look for books
-    When there are books
+    Given there are books
+    When I go to the books page
     Then I should see books

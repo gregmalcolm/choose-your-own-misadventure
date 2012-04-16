@@ -1,10 +1,10 @@
 require 'cucumber/rails'
-
+require 'debugger'
 Capybara.default_selector = :css
 ActionController::Base.allow_rescue = false
 
 begin
-  DatabaseCleaner.strategy = :transaction
+  DatabaseCleaner.strategy = :truncation
 rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
@@ -19,3 +19,5 @@ if ENV['CAPYBARA_ENV_TYPE'] == 'HEADLESS'
 else
   Capybara.javascript_driver = Capybara.default_driver = :selenium
 end
+
+World FactoryGirl::Syntax::Methods

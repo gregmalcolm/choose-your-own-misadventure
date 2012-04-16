@@ -3,6 +3,7 @@ class Misadventure.BooksView extends Backbone.View
 
   initialize: ->
     @collection.on 'add', @render, @
+    @collection.on 'reset', @render, @
     @newTaskView = new Misadventure.NewBookView collection: @collection
 
   render: ->

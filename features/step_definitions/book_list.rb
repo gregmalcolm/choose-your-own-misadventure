@@ -1,16 +1,10 @@
-BOOKS = <<-JSON
-[
-  {name: "War and peas"},
-  {name: "Where llamas dare" }
-]
-JSON
-
-Given /^I'm on the books page$/ do
-  visit '/'
+Given /^there are books$/ do
+  create(:book, :name=>"War and peas")
+  create(:book, :name=>"Where llamas dare")
 end
 
-When /^there are books$/ do
-  page.evaluate_script("window.router.booksView.collection.add(#{BOOKS})")
+When /^I go to the books page$/ do
+  visit '/'
 end
 
 Then /^I should see books$/ do

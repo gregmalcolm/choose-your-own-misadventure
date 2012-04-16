@@ -1,5 +1,5 @@
 Misadventure::Application.routes.draw do
-  resources :inquiries, :defaults => { :format => 'json' }
+  resources :books, :default=> { :format => 'json' }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
