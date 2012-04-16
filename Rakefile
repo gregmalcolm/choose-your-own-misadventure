@@ -4,8 +4,10 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-#task :default => ['spec', 'jasmine:headless', 'cucumber']
-task :default => ['spec']
+unless ENV['TRAVIS_RUBY_VERSION'] 
+  #task :default => ['spec', 'jasmine:headless', 'cucumber']
+#  task :default => ['spec']
+end
 
 Misadventure::Application.load_tasks
 
