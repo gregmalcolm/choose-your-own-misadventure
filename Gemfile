@@ -33,7 +33,6 @@ group :development, :test do
   gem 'database_cleaner'
 
   gem 'jasmine-headless-webkit'
-  #gem 'jasmine-headless-webkit', :git => 'git://github.com/johnbintz/jasmine-headless-webkit.git', :branch => 'master'
 
   gem 'guard-rspec'
   gem 'guard-cucumber'
@@ -45,8 +44,5 @@ group :development, :test do
 
   gem 'growl'
   gem 'rb-fsevent'
-end
-
-group :development do
   gem 'debugger'
 end
