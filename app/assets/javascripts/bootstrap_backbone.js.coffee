@@ -9,4 +9,6 @@ unless window.jasmineSpecsAreRunning
   $ ->
     window.router = new Misadventure.SiteRouter()
     Backbone.history.start()
-    window.router.booksView.collection.reset(preloadModels.books)
+
+    preloadedModels = window.preloadModels ? {}
+    window.router.booksView.collection.reset(preloadedModels.books ? {})
