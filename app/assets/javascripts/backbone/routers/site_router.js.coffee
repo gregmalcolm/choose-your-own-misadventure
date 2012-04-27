@@ -2,6 +2,7 @@ class Misadventure.SiteRouter extends Backbone.Router
     
   routes:
     '': 'books'
+    'books': 'books'
 
   books: ->
     @booksView ||= new Misadventure.BooksView

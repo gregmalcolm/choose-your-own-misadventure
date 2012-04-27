@@ -10,3 +10,4 @@ class Misadventure.BooksView extends Backbone.View
     $(@el).html(@template({books: @collection}))
     $('#book_list').append($("<li/>", { html: @newTaskView.render().el }))
     @
+

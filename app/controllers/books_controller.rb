@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  respond_to :json
+
   def index
     @books = Book.paginate(:per_page => 1, :page => params[:page])
 
@@ -12,5 +14,16 @@ class BooksController < ApplicationController
         }
       }
     end
+  end
+
+  def create
+    puts params
+    @book = Book.new(params[:book])
+
+    if @book.save
+      respond_with @book, status: :created, location: @book
+    else
+      respond_with @book.errors, status: :unprocessable_entity
+    end    
   end
 end

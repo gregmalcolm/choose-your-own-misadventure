@@ -16,5 +16,3 @@ class Misadventure.NewBookView extends Backbone.View
       event.preventDefault()
       attributes = { name:$('#new-book').val() }
       @collection.create(attributes)
-
-
