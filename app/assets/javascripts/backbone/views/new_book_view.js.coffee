@@ -14,12 +14,12 @@ class Misadventure.NewBookView extends Backbone.View
 
   readKeys: (event) ->
     if (event.keyCode is EnterKey)
-      event.preventDefault
+      event.preventDefault()
       @addBook()
       
   submitBook: (event) ->
+    event.preventDefault()
     @addBook()
-    false
 
   addBook: ->
     @collection.addBook($('#new-book').val())
