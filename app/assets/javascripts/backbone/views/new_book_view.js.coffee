@@ -14,5 +14,8 @@ class Misadventure.NewBookView extends Backbone.View
   createBook: (event) ->
     if (event.keyCode is EnterKey)
       event.preventDefault()
-      attributes = { name:$('#new-book').val() }
-      @collection.create(attributes)
+      @collection.addBook($('#new-book').val())
+#      nameText = _.trim($('#new-book').val())
+#      if nameText != ''
+#        attributes = { name: nameText }
+#        @collection.create(attributes)

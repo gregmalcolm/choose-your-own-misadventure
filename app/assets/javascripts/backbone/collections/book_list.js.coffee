@@ -2,6 +2,8 @@ class Misadventure.BookList extends Backbone.Collection
   model: Misadventure.Book 
   url: -> "/"
 
-  addBook: ->
-    console.log "blah de blah"
-    #@render
+  addBook: (nameText)->
+      nameText = _.trim(nameText)
+      if nameText != ''
+        attributes = { name: nameText }
+        @create(attributes)
