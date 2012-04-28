@@ -1,6 +1,8 @@
 <div class="input-append">
-  <input id="new-book" class="input-book-add" type="text" placeholder="Create a new book..." /><button 
-    class="btn btn-primary" id="book-add" type="button">Create</button>
+  <form>
+    <input id="new-book" class="input-book-add" type="text" placeholder="Create a new book..." /><button 
+      class="btn btn-primary" id="create" type="submit">Create</button>
+  </form>
 </div>
 
 
