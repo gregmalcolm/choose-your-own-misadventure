@@ -1,4 +1,4 @@
-Feature: I'm picking a book
+Feature: Picking a book
 
   Scenario: I'm looking for books
     Given there are books

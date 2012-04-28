@@ -1,5 +1,6 @@
 require 'cucumber/rails'
-require 'debugger' unless ENV['TRAVIS_RUBY_VERSION']                        
+require 'debugger' unless ENV['TRAVIS_RUBY_VERSION']
+
 Capybara.default_selector = :css
 ActionController::Base.allow_rescue = false
 
@@ -21,3 +22,5 @@ else
 end
 
 World FactoryGirl::Syntax::Methods
+Dir[Rails.root.join("features/page_objects/**/*.rb")].each {|f| require f}
+
