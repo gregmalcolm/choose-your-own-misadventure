@@ -6,8 +6,11 @@ class Misadventure.BooksView extends Backbone.View
     'mouseleave .book-listing': 'bookMouseLeave'
 
   initialize: ->
-    @model.collection.on 'change', @render, @
-    @model.collection.on 'reset', @render, @
+    @model.collection.on 'change'                     , @render,           @
+    @model.collection.on 'reset'                      , @render,           @
+    @model.on            'change:lastDeleteTarget'    , @hideDeleteButton, @
+    @model.on            'change:currentDeleteTarget' , @showDeleteButton, @
+
     @newTaskView = new Misadventure.NewBookView model: @model
 
   render: ->
@@ -16,6 +19,24 @@ class Misadventure.BooksView extends Backbone.View
     @
 
   bookMouseEnter: (e) -> 
-    #$(e.currentTarget).find('.button-delete').show()
+    el=$(e.currentTarget)[0]
+    if el
+      @model.changeDeleteTarget(el.id)
   
-  bookMouseLeave: (e)->
+  bookMouseLeave: (e) ->
+    el=$(e.currentTarget)[0]
+    if el
+      @model.lostDeleteTarget(el.id)
+      
+  hideDeleteButton: ->
+    id = @model.lastDeleteTarget()
+    if id
+      target = $("##{id}").find('.button-delete')
+      target.slideUp(150)
+
+  showDeleteButton: ->
+    id = @model.currentDeleteTarget()
+    if id
+      target = $("##{id}").find('.button-delete')
+      target.slideDown(150)
+

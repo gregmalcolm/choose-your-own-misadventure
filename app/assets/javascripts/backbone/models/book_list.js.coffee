@@ -10,8 +10,18 @@ class Misadventure.BookList extends Backbone.Model
     else
       $('#new-book').focus()
 
-  getDeleteTarget: ->
-    @collection.get('deleteTarget')
+  lastDeleteTarget: ->
+    @get('lastDeleteTarget')
+
+  currentDeleteTarget: ->
+    @get('currentDeleteTarget')
 
   changeDeleteTarget: (target) ->
-    @collection.set('deleteTarget': target)
+    @set(lastDeleteTarget: @currentDeleteTarget())
+    @set(currentDeleteTarget: target)
+    @
+
+  lostDeleteTarget: (target) ->
+    if target == @currentDeleteTarget()
+      @changeDeleteTarget null
+    @
