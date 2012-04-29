@@ -9,5 +9,3 @@ class Misadventure.SiteRouter extends Backbone.Router
       el: $('.books')[0]
       collection: new Misadventure.BookList
     @booksView.collection.url = '/books.json'
-
-    @booksView.render()

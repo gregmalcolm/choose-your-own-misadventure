@@ -4,10 +4,10 @@ class Misadventure.NewBookView extends Backbone.View
   template: JST["backbone/templates/new_book"] 
 
   events:
-    'keypress #new-book': 'keypress'
-    'focus #new-book'   : 'showSubmit'
-    'blur #new-book'    : 'hideSubmit'
-    'click #create'     : 'submit',
+    'keypress #new-book' : 'keypress'
+    'focus    #new-book' : 'showSubmit'
+    'blur     #new-book' : 'hideSubmit'
+    'click    #create'   : 'submit'
 
   render: ->
     $(@el).html(@template())

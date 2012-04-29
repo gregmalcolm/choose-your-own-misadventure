@@ -1,13 +1,20 @@
 class Misadventure.BooksView extends Backbone.View
   template: JST["backbone/templates/books"] 
+ 
+  events:
+    'mouseenter .book-listing': 'bookMouseEnter'
+    'mouseleave .book-listing': 'bookMouseLeave'
 
   initialize: ->
-    @collection.on 'add', @render, @
+    @collection.on 'change', @render, @
     @collection.on 'reset', @render, @
     @newTaskView = new Misadventure.NewBookView collection: @collection
 
   render: ->
     $(@el).html(@template({books: @collection}))
-    $('#book_list').append($("<li/>", { html: @newTaskView.render().el }))
+    $('#book-list').append($("<li/>", { html: @newTaskView.render().el }))
     @
 
+  bookMouseEnter: (data) ->
+  
+  bookMouseLeave: (data)->

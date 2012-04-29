@@ -4,6 +4,8 @@ class Misadventure.BookList extends Backbone.Collection
 
   addBook: (nameText)->
       nameText = _.trim(nameText)
-      if nameText != ''
+      unless nameText == ''
         attributes = { name: nameText }
         @create(attributes)
+      else
+        $('#new-book').focus()

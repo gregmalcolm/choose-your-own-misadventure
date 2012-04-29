@@ -2,11 +2,11 @@
   <h2>Books</h2>
   <div class="well">
   <% if @books: %>
-    <ul id="book_list" class="unstyled">
-      <% for book in @books.pluck("name"): %>
-      <li class="book_listing">
-        <%= book %>
-      </li>      
+    <ul id="book-list" class="unstyled">
+      <% for book in @books.models: %>        
+        <li id="book-id<%= book.get('id') %>" class="book-listing">
+          <%= book.get('name') %>
+        </li>      
       <% end %>
     </ul>
   <% end %>

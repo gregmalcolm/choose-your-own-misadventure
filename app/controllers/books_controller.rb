@@ -17,7 +17,6 @@ class BooksController < ApplicationController
   end
 
   def create
-    puts params
     @book = Book.new(params[:book])
 
     if @book.save
