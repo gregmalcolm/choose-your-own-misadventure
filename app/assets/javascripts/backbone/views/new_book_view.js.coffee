@@ -30,5 +30,5 @@ class Misadventure.NewBookView extends Backbone.View
     $('#create').fadeOut()
 
   addBook: ->
-    @collection.addBook($('#new-book').val())
+    @model.addBook($('#new-book').val())
 

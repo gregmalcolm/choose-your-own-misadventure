@@ -9,13 +9,13 @@ describe "Misadventure.BookList", ->
 
   describe "#addBook", ->
     When -> @subject.addBook("Interview with a Nompire")
-    Then -> expect(@subject.length).toBe(1)
-    Then -> expect(@subject.last().get('name')).toBe("Interview with a Nompire")
+    Then -> expect(@subject.collection.length).toBe(1)
+    Then -> expect(@subject.collection.last().get('name')).toBe("Interview with a Nompire")
 
   context "with data:", ->
-    Given -> @subject.add(data)
+    Given -> @subject.collection.add(data)
 
-    Then -> expect(@subject.length).toBe(3)
+    Then -> expect(@subject.collection.length).toBe(3)
 
     describe "#getDeleteTarget", ->
       context "with no target", ->

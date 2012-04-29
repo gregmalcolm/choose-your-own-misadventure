@@ -11,4 +11,4 @@ unless window.jasmineSpecsAreRunning
     Backbone.history.start()
 
     preloadedModels = window.preloadModels ? {}
-    window.router.booksView.collection.reset(preloadedModels.books ? {})
+    window.router.booksView.model.collection.reset(preloadedModels.books ? {})

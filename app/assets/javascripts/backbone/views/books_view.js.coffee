@@ -6,12 +6,12 @@ class Misadventure.BooksView extends Backbone.View
     'mouseleave .book-listing': 'bookMouseLeave'
 
   initialize: ->
-    @collection.on 'change', @render, @
-    @collection.on 'reset', @render, @
-    @newTaskView = new Misadventure.NewBookView collection: @collection
+    @model.collection.on 'change', @render, @
+    @model.collection.on 'reset', @render, @
+    @newTaskView = new Misadventure.NewBookView model: @model
 
   render: ->
-    $(@el).html(@template({books: @collection}))
+    $(@el).html(@template({books: @model.collection}))
     $('#book-list').append($("<li/>", { html: @newTaskView.render().el }))
     @
 
