@@ -4,8 +4,12 @@
   <% if @books: %>
     <ul id="book-list" class="unstyled">
       <% for book in @books.models: %>        
-        <li id="book-id<%= book.get('id') %>" class="book-listing">
-          <%= book.get('name') %>
+        <% id = book.get('id') %> 
+        <li>
+          <div id="book-<%= id %>" class="book-listing">
+            <a><%= book.get('name') %></a>
+            <button id="delete-id-<%= id %>" class="btn btn-mini btn-danger button-delete" style="display: none;" type="button">Delete</button>
+          </div>  
         </li>      
       <% end %>
     </ul>

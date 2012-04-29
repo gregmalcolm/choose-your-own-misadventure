@@ -15,6 +15,7 @@ class Misadventure.BooksView extends Backbone.View
     $('#book-list').append($("<li/>", { html: @newTaskView.render().el }))
     @
 
-  bookMouseEnter: (data) ->
+  bookMouseEnter: (e) -> 
+    #$(e.currentTarget).find('.button-delete').show()
   
-  bookMouseLeave: (data)->
+  bookMouseLeave: (e)->

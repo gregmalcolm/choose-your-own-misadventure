@@ -3,9 +3,15 @@ class Misadventure.BookList extends Backbone.Collection
   url: -> "/"
 
   addBook: (nameText)->
-      nameText = _.trim(nameText)
-      unless nameText == ''
-        attributes = { name: nameText }
-        @create(attributes)
-      else
-        $('#new-book').focus()
+    nameText = _.trim(nameText)
+    unless nameText == ''
+      attributes = { name: nameText }
+      @create(attributes)
+    else
+      $('#new-book').focus()
+
+  getDeleteTarget: ->
+    @get('deleteTarget')
+
+  changeDeleteTarget: (target) ->
+    @set('deleteTarget': target)
