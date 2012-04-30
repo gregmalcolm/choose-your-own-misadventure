@@ -26,3 +26,8 @@ class Misadventure.BookList extends Backbone.Model
     if target == @currentDeleteTarget()
       @changeDeleteTarget null
     @
+
+  deleteBook: (book_id_tag) ->
+    id = _.trim(book_id_tag).match(/[0-9]+$/)
+    if id
+      @collection.get(id).destroy()

@@ -1,3 +1,6 @@
 class Misadventure.Book extends Backbone.Model
   url: ->
-    "/books"
+    if @id
+      "/books/#{@id}"
+    else
+      "/books"

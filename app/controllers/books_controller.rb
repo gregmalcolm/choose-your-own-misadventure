@@ -25,4 +25,15 @@ class BooksController < ApplicationController
       respond_with @book.errors, status: :unprocessable_entity
     end    
   end
+
+  def destroy
+    puts "PARAMS"
+    puts params
+    @book = Book.find(params[:id])
+    if @book.destroy
+      respond_with @book, status: :deleted
+    else
+      respond_with @book.errors, status: :unprocessable_entity
+    end
+  end
 end

@@ -9,8 +9,8 @@ describe "Misadventure.BookList", ->
 
   describe "#addBook", ->
     When -> @subject.addBook("Interview with a Nompire")
-    Then(-> expect(@subject.collection.length).toBe(1))
-    .Then(-> expect(@subject.collection.last().get('name')).toBe("Interview with a Nompire"))
+    Then(-> expect(@subject.collection.length).toBe(1) )
+    .Then(-> expect(@subject.collection.last().get('name')).toBe("Interview with a Nompire") )
 
   context "with data:", ->
     Given -> @subject.collection.add(data)
@@ -22,13 +22,13 @@ describe "Misadventure.BookList", ->
 
         context "sets a new change target", ->
           When -> @subject.changeDeleteTarget('book-2')
-          Then(-> expect(@subject.currentDeleteTarget()).toBe('book-2'))
-          .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy())
+          Then(-> expect(@subject.currentDeleteTarget()).toBe('book-2') )
+          .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy() )
 
       context "with a target already present", ->
         Given -> @subject.changeDeleteTarget('book-1')
-        Then(-> expect(@subject.currentDeleteTarget()).toBe('book-1'))
-        .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy())
+        Then(-> expect(@subject.currentDeleteTarget()).toBe('book-1') )
+        .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy() )
 
         context "new target", ->
           When -> @subject.changeDeleteTarget('book-3')
@@ -37,9 +37,8 @@ describe "Misadventure.BookList", ->
 
         context "target is same as old target", ->
           When -> @subject.changeDeleteTarget('book-1')
-          Then(-> expect(@subject.currentDeleteTarget()).toBe('book-1'))
-          .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy())
-
+          Then(-> expect(@subject.currentDeleteTarget()).toBe('book-1') )
+          .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy() )
     
     describe "#lostDeleteTarget", ->
       context "with no prior target", ->
@@ -51,12 +50,17 @@ describe "Misadventure.BookList", ->
 
         context "and we lose the current target", ->
           When -> @subject.lostDeleteTarget('book-1')
-          Then(-> expect(@subject.currentDeleteTarget()?).toBeFalsy())
-          Then(-> expect(@subject.lastDeleteTarget()).toBe('book-1'))
+          Then(-> expect(@subject.currentDeleteTarget()?).toBeFalsy() )
+          .Then(-> expect(@subject.lastDeleteTarget()).toBe('book-1') )
 
         context "and we lose a diffrent target", ->
           When -> @subject.lostDeleteTarget('book-2')
-          Then(-> expect(@subject.currentDeleteTarget()).toBe('book-1'))
-          .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy())
+          Then(-> expect(@subject.currentDeleteTarget()).toBe('book-1') )
+          .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy() )
 
+    describe "#deleteBook", ->
+      context "destroy book #2", ->
+        When -> @subject.deleteBook('book-2')
+        Then(-> expect(@subject.collection.at(1).get('id')).toBe(3) )
+        .Then(-> expect(@subject.collection.length).toBe(2) )
 
