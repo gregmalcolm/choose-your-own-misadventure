@@ -13,15 +13,15 @@ class Misadventure.BookList extends Backbone.Model
       $('#new-book').focus()
     @
 
-  lastDeleteTarget: ->
-    @get('lastDeleteTarget')
+  prevDeleteTarget: ->
+    @get('prevDeleteTarget')
 
   currentDeleteTarget: ->
     @get('currentDeleteTarget')
 
   changeDeleteTarget: (target) ->
     unless target == @currentDeleteTarget()
-      @set(lastDeleteTarget: @currentDeleteTarget())
+      @set(prevDeleteTarget: @currentDeleteTarget())
       @set(currentDeleteTarget: target)
     @
 

@@ -23,22 +23,22 @@ describe "Misadventure.BookList", ->
         context "sets a new change target", ->
           When -> @subject.changeDeleteTarget('book-2')
           Then(-> expect(@subject.currentDeleteTarget()).toBe('book-2') )
-          .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy() )
+          .Then(-> expect(@subject.prevDeleteTarget()?).toBeFalsy() )
 
       context "with a target already present", ->
         Given -> @subject.changeDeleteTarget('book-1')
         Then(-> expect(@subject.currentDeleteTarget()).toBe('book-1') )
-        .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy() )
+        .Then(-> expect(@subject.prevDeleteTarget()?).toBeFalsy() )
 
         context "new target", ->
           When -> @subject.changeDeleteTarget('book-3')
           Then(-> expect(@subject.currentDeleteTarget()).toBe('book-3'))
-          .Then(-> expect(@subject.lastDeleteTarget()).toBe('book-1'))
+          .Then(-> expect(@subject.prevDeleteTarget()).toBe('book-1'))
 
         context "target is same as old target", ->
           When -> @subject.changeDeleteTarget('book-1')
           Then(-> expect(@subject.currentDeleteTarget()).toBe('book-1') )
-          .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy() )
+          .Then(-> expect(@subject.prevDeleteTarget()?).toBeFalsy() )
     
     describe "#lostDeleteTarget", ->
       context "with no prior target", ->
@@ -51,12 +51,12 @@ describe "Misadventure.BookList", ->
         context "and we lose the current target", ->
           When -> @subject.lostDeleteTarget('book-1')
           Then(-> expect(@subject.currentDeleteTarget()?).toBeFalsy() )
-          .Then(-> expect(@subject.lastDeleteTarget()).toBe('book-1') )
+          .Then(-> expect(@subject.prevDeleteTarget()).toBe('book-1') )
 
         context "and we lose a diffrent target", ->
           When -> @subject.lostDeleteTarget('book-2')
           Then(-> expect(@subject.currentDeleteTarget()).toBe('book-1') )
-          .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy() )
+          .Then(-> expect(@subject.prevDeleteTarget()?).toBeFalsy() )
     
     describe "#deleteBook", ->
       context "destroy book #2", ->

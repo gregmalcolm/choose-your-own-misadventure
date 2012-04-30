@@ -12,7 +12,7 @@ class Misadventure.BooksView extends Backbone.View
     @model.collection.on 'remove'                     , @render,           @
     @model.collection.on 'change'                     , @render,           @
     @model.collection.on 'reset'                      , @render,           @
-    @model.on            'change:lastDeleteTarget'    , @hideDeleteButton, @
+    @model.on            'change:prevDeleteTarget'    , @hideDeleteButton, @
     @model.on            'change:currentDeleteTarget' , @showDeleteButton, @
 
     @newTaskView = new Misadventure.NewBookView model: @model
@@ -47,7 +47,7 @@ class Misadventure.BooksView extends Backbone.View
         @model.deleteBook(el.id)
       
   hideDeleteButton: ->
-    id = @model.lastDeleteTarget()
+    id = @model.prevDeleteTarget()
     if id
       target = $("##{id}").find('.button-delete')
       target.slideUp(150)
