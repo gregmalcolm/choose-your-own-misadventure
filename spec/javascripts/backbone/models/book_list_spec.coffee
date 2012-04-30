@@ -30,10 +30,16 @@ describe "Misadventure.BookList", ->
         Then(-> expect(@subject.currentDeleteTarget()).toBe('book-1'))
         .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy())
 
-        context "sets a new change target", ->
+        context "new target", ->
           When -> @subject.changeDeleteTarget('book-3')
           Then(-> expect(@subject.currentDeleteTarget()).toBe('book-3'))
           .Then(-> expect(@subject.lastDeleteTarget()).toBe('book-1'))
+
+        context "target is same as old target", ->
+          When -> @subject.changeDeleteTarget('book-1')
+          Then(-> expect(@subject.currentDeleteTarget()).toBe('book-1'))
+          .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy())
+
     
     describe "#lostDeleteTarget", ->
       context "with no prior target", ->

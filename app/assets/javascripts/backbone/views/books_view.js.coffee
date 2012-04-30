@@ -2,8 +2,10 @@ class Misadventure.BooksView extends Backbone.View
   template: JST["backbone/templates/books"] 
  
   events:
-    'mouseenter .book-listing': 'bookMouseEnter'
-    'mouseleave .book-listing': 'bookMouseLeave'
+    'mouseenter .book-listing' : 'bookMouseEnter'
+    'mouseleave .book-listing' : 'bookMouseLeave'
+    'click      .book-listing' : 'bookClick'
+
 
   initialize: ->
     @model.collection.on 'change'                     , @render,           @
@@ -27,6 +29,12 @@ class Misadventure.BooksView extends Backbone.View
     el=$(e.currentTarget)[0]
     if el
       @model.lostDeleteTarget(el.id)
+
+  bookClick: (e) ->    
+    e.preventDefault()
+    el=$(e.currentTarget)[0]
+    if el
+      @model.changeDeleteTarget(el.id)
       
   hideDeleteButton: ->
     id = @model.lastDeleteTarget()

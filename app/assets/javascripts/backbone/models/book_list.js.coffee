@@ -17,8 +17,9 @@ class Misadventure.BookList extends Backbone.Model
     @get('currentDeleteTarget')
 
   changeDeleteTarget: (target) ->
-    @set(lastDeleteTarget: @currentDeleteTarget())
-    @set(currentDeleteTarget: target)
+    unless target == @currentDeleteTarget()
+      @set(lastDeleteTarget: @currentDeleteTarget())
+      @set(currentDeleteTarget: target)
     @
 
   lostDeleteTarget: (target) ->

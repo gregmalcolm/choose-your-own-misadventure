@@ -14,19 +14,19 @@ class Misadventure.NewBookView extends Backbone.View
     @delegateEvents()
     @
 
-  keypress: (event) ->
-    if (event.keyCode is EnterKey)
-      event.preventDefault()
+  keypress: (e) ->
+    if (e.keyCode is EnterKey)
+      e.preventDefault()
       @addBook()
       
-  submit: (event) ->
-    event.preventDefault()
+  submit: (e) ->
+    e.preventDefault()
     @addBook()
 
-  showSubmit: (event) ->
+  showSubmit: ->
     $('#create').fadeIn('fast')
 
-  hideSubmit: (event) ->
+  hideSubmit: ->
     $('#create').fadeOut()
 
   addBook: ->

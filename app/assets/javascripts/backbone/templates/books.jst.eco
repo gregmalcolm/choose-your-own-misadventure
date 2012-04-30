@@ -7,7 +7,7 @@
         <% id = book.get('id') %> 
         <li>
           <div id="book-<%= id %>" class="book-listing">
-            <a><%= book.get('name') %></a>
+            <a class="link-book"><%= book.get('name') %></a>
             <button id="delete-id-<%= id %>" class="btn btn-mini btn-danger button-delete" style="display: none;" type="button">Delete</button>
           </div>  
         </li>      
