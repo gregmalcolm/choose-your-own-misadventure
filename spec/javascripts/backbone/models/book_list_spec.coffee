@@ -57,7 +57,7 @@ describe "Misadventure.BookList", ->
           When -> @subject.lostDeleteTarget('book-2')
           Then(-> expect(@subject.currentDeleteTarget()).toBe('book-1') )
           .Then(-> expect(@subject.lastDeleteTarget()?).toBeFalsy() )
-
+    
     describe "#deleteBook", ->
       context "destroy book #2", ->
         When -> @subject.deleteBook('book-2')

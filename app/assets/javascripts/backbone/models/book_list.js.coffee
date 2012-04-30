@@ -2,6 +2,8 @@ class Misadventure.BookList extends Backbone.Model
   initialize: ->
     @collection = new Misadventure.BookCollection
 
+    @on 'change:currentDeleteTarget', @updateDesiredTarget, @
+
   addBook: (nameText) ->
     nameText = _.trim(nameText)
     unless nameText == ''
@@ -9,6 +11,7 @@ class Misadventure.BookList extends Backbone.Model
       @collection.create(attributes)
     else
       $('#new-book').focus()
+    @
 
   lastDeleteTarget: ->
     @get('lastDeleteTarget')
@@ -22,8 +25,20 @@ class Misadventure.BookList extends Backbone.Model
       @set(currentDeleteTarget: target)
     @
 
+  changeDeleteTargetAfterPause: (target) ->
+    @desiredTarget = target
+    setTimeout( (=>
+      if @desiredTarget == target
+        @changeDeleteTarget(target)
+    ), 500)
+    @
+   
+  updateDesiredTarget: ->
+    @desiredTarget = null
+
   lostDeleteTarget: (target) ->
-    if target == @currentDeleteTarget()
+    @updateDesiredTarget()
+    if target ==  @currentDeleteTarget()
       @changeDeleteTarget null
     @
 
@@ -31,3 +46,4 @@ class Misadventure.BookList extends Backbone.Model
     id = _.trim(book_id_tag).match(/[0-9]+$/)
     if id
       @collection.get(id).destroy()
+    @

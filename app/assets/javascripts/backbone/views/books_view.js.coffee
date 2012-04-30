@@ -25,7 +25,7 @@ class Misadventure.BooksView extends Backbone.View
   mouseEnterBook: (e) -> 
     el=$(e.currentTarget)[0]
     if el
-      @model.changeDeleteTarget(el.id)
+      @model.changeDeleteTargetAfterPause(el.id)
   
   mouseLeaveBook: (e) ->
     el=$(e.currentTarget)[0]
