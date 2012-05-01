@@ -1,7 +1,6 @@
 class Misadventure.BookList extends Backbone.Model
   initialize: ->
     @collection = new Misadventure.BookCollection
-
     @on 'change:currentDeleteTarget', @updateDesiredTarget, @
 
   addBook: (nameText) ->
@@ -47,3 +46,4 @@ class Misadventure.BookList extends Backbone.Model
     if id
       @collection.get(id).destroy()
     @
+

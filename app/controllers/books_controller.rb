@@ -2,18 +2,7 @@ class BooksController < ApplicationController
   respond_to :json
 
   def index
-    @books = Book.paginate(:per_page => 1, :page => params[:page])
-
-    respond_to do |format|
-      format.json {
-        render :json => {
-          :current_page => @books.current_page,
-          :per_page => @books.per_page,
-          :total_entries => @books.total_entries,
-          :entries => @books
-        }
-      }
-    end
+    @books = Book.paginate(:per_page => 20, :page => params[:page]).order('created_at DESC')
   end
 
   def create
@@ -27,8 +16,6 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    puts "PARAMS"
-    puts params
     @book = Book.find(params[:id])
     if @book.destroy
       respond_with @book, status: :deleted

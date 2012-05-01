@@ -1,7 +1,8 @@
 data = [
-  { "id": 1, "name": "Where Llamas Dare" }
-  { "id": 2, "name": "LOL Zombie Gorillas" }
-  { "id": 3, "name": "Help there is a temple about to fall on my head" }
+  { "id": 1, "name": "Where Llamas Dare",                               "created_at": "March 4, 2012",  "updated_at": "March 4, 2012" }
+  { "id": 2, "name": "LOL Zombie Gorillas",                             "created_at": "March 18, 2012", "updated_at": "March 18, 2012" }
+  { "id": 3, "name": "Help there is a temple about to fall on my head", "created_at": "March 20, 2012", "updated_at": "March 20, 2012" }
+  { "id": 4, "name": "Moo!",                                            "created_at": "March 21, 2012", "updated_at": "March 21, 2012" }
 ]
 
 describe "Misadventure.BookList", ->
@@ -14,7 +15,7 @@ describe "Misadventure.BookList", ->
 
   context "with data:", ->
     Given -> @subject.collection.add(data)
-    Then -> expect(@subject.collection.length).toBe(3)
+    Then -> expect(@subject.collection.length).toBe(4)
 
     describe "#changeDeleteTarget", ->
       context "with no prior target", ->
@@ -61,6 +62,10 @@ describe "Misadventure.BookList", ->
     describe "#deleteBook", ->
       context "destroy book #2", ->
         When -> @subject.deleteBook('book-2')
-        Then(-> expect(@subject.collection.at(1).get('id')).toBe(3) )
-        .Then(-> expect(@subject.collection.length).toBe(2) )
+        Then(-> expect(@subject.collection.at(1).get('name'))
+          .toBe("Help there is a temple about to fall on my head") )
+        .Then(-> expect(@subject.collection.length).toBe(3) )
 
+    describe "model sorting", ->
+      Then(-> 
+        expect(@subject.collection.at(0).id).toBe(4) )

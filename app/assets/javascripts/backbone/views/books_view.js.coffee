@@ -20,7 +20,7 @@ class Misadventure.BooksView extends Backbone.View
   render: ->
     $(@el).html(@template({books: @model.collection}))
     $('#book-list').append($("<li/>", { html: @newTaskView.render().el }))
-    @
+    @ 
   
   mouseEnterBook: (e) -> 
     el=$(e.currentTarget)[0]

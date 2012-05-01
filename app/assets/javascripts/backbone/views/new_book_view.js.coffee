@@ -31,4 +31,3 @@ class Misadventure.NewBookView extends Backbone.View
 
   addBook: ->
     @model.addBook($('#new-book').val())
-
