@@ -1,4 +1,6 @@
 Misadventure::Application.routes.draw do
+  devise_for :users
+
   resources :books, :default=> { :format => 'json' }
  
   root :to => 'books#index'
