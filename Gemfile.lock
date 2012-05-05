@@ -67,6 +67,7 @@ GEM
       capybara (>= 1.1.2)
       cucumber (>= 1.1.8)
       nokogiri (>= 1.5.0)
+    daemon_controller (1.0.0)
     database_cleaner (0.7.2)
     debugger (1.1.1)
       columnize (>= 0.3.1)
@@ -94,6 +95,7 @@ GEM
     factory_girl_rails (3.1.0)
       factory_girl (~> 3.1.0)
       railties (>= 3.0.0)
+    fastthread (1.0.7)
     ffi (1.0.11)
     gherkin (2.9.3)
       json (>= 1.4.6)
@@ -139,6 +141,11 @@ GEM
     multi_json (1.2.0)
     nokogiri (1.5.2)
     orm_adapter (0.0.7)
+    passenger (3.0.12)
+      daemon_controller (>= 0.2.5)
+      fastthread (>= 1.0.1)
+      rack
+      rake (>= 0.8.1)
     pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -237,6 +244,7 @@ DEPENDENCIES
   guard-rspec
   jasmine-headless-webkit
   less
+  passenger
   pg
   rails (~> 3.2.1)
   rb-fsevent
