@@ -3,10 +3,10 @@ Misadventure::Application.routes.draw do
 
   resources :books, :default=> { :format => 'json' }
  
-  authenticated :user do
+#  authenticated :user do
     root :to => 'books#index'
-  end
-  root :to => 'home#index'
+#  end
+#  root :to => 'home#index'
   #mount JasmineRails::Engine => "/specs" unless Rails.env.production?
   #match '*path', :to => 'backbone#hashify_path'
 end

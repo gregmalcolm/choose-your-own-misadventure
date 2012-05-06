@@ -1,4 +1,4 @@
-//= require underscore-min
-//= require jquery-min
-//= require backbone-min
+//= require underscore
+//= require jquery
+//= require backbone
 //= require_tree .

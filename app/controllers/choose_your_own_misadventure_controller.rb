@@ -1,2 +1,0 @@
-class ChooseYourOwnMisadventureController < ApplicationController
-end
