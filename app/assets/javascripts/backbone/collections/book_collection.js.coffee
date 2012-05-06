@@ -1,5 +1,5 @@
-class Misadventure.BookCollection extends Backbone.Collection
-  model: Misadventure.Book 
+class Misadventure.Collections.BookCollection extends Backbone.Collection
+  model: Misadventure.Models.Book 
   url: -> "/"
 
   comparator: (book) ->

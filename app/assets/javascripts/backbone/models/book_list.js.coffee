@@ -1,6 +1,6 @@
-class Misadventure.BookList extends Backbone.Model
+class Misadventure.Models.BookList extends Backbone.Model
   initialize: ->
-    @collection = new Misadventure.BookCollection
+    @collection = new Misadventure.Collections.BookCollection
     @on 'change:currentDeleteTarget', @updateDesiredTarget, @
 
   addBook: (nameText) ->

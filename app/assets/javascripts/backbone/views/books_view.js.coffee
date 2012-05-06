@@ -1,4 +1,4 @@
-class Misadventure.BooksView extends Backbone.View
+class Misadventure.Views.BooksView extends Backbone.View
   template: JST["backbone/templates/books"] 
  
   events:
@@ -15,7 +15,7 @@ class Misadventure.BooksView extends Backbone.View
     @model.on            'change:prevDeleteTarget'    , @hideDeleteButton, @
     @model.on            'change:currentDeleteTarget' , @showDeleteButton, @
 
-    @newTaskView = new Misadventure.NewBookView model: @model
+    @newTaskView = new Misadventure.Views.NewBookView model: @model
 
   render: ->
     $(@el).html(@template({books: @model.collection}))
