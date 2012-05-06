@@ -1,4 +1,4 @@
-class BooksController < ApplicationController
+class BooksController < SecuredController
   respond_to :json
 
   def index
