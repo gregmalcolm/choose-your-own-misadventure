@@ -9,14 +9,15 @@ class Misadventure.Views.BooksView extends Backbone.View
 
 
   initialize: ->
+    @model = new Misadventure.Models.BookList() 
     @model.collection.on 'remove'                     , @render,           @
     @model.collection.on 'change'                     , @render,           @
     @model.collection.on 'reset'                      , @render,           @
     @model.on            'change:prevDeleteTarget'    , @hideDeleteButton, @
     @model.on            'change:currentDeleteTarget' , @showDeleteButton, @
 
-    @newTaskView = new Misadventure.Views.NewBookView model: @model
-
+    @newTaskView = new Misadventure.Views.NewBookView({model: @model})
+    
   render: ->
     $(@el).html(@template({books: @model.collection}))
     $('#book-list').append($("<li/>", { html: @newTaskView.render().el }))

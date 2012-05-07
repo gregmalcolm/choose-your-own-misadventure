@@ -1,5 +1,4 @@
 <script type="text/javascript">
-  var preloadModels = {      
-    books: <%=raw @books.to_json %>
-  };
+  console.log("preload");
+  Misadventure.preloaded.books = <%=raw @books.to_json %>;
 </script>
