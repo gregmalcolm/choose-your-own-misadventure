@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   respond_to :json
 
   def index
-    @books = Book.paginate(:per_page => 20, :page => params[:page]).order('created_at DESC')
+    @books = Book.paginate(:per_page => 20, :page => params[:page]).order('updated_at DESC')
   end
 
   def create

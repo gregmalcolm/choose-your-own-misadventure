@@ -3,7 +3,7 @@ class Misadventure.Collections.BookCollection extends Backbone.Collection
   url: -> "/books.json"
 
   comparator: (book) ->
-    date = book.get('created_at')
+    date = book.get('updated_at')
     if date
       order = Date.parse(date) * 1
     else
