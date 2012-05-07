@@ -10,10 +10,15 @@
   
 <div class="container">
   <%= yield %>
-  <div id="books">
+  <div id="main">
   </div>  
 </div>
 <script type="text/javascript">
+  <% if signed_in? -%>
+    Misadventure.currentUser = new Misadventure.Models.User(<%= current_user.to_json.html_safe %>);
+  <% else -%>
+    Misadventure.currentUser = null;
+  <% end -%>  
   $(document).ready(Misadventure.start());
 </script>
 </body>

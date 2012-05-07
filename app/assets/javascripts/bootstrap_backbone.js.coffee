@@ -16,7 +16,7 @@ Misadventure.preloaded = {
 
 Misadventure.layouts = {}
 
-Misadventure.addRegions { books: '#books' }
+Misadventure.addRegions { books: '#main' }
 
 Misadventure.bind "initialize:after", ->
   preloadedModels = window.preloadModels ? {}

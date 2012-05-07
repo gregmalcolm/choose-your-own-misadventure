@@ -1,6 +1,6 @@
 describe "Misadventure.Views.BooksView", ->
   Given -> @subject = new Misadventure.Views.BooksView
-    el: $('#books')[0]
+    el: $('#main')[0]
     model: new Misadventure.Models.BookList
 
   Then -> 
