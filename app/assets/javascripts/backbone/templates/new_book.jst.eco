@@ -1,7 +1,7 @@
 <div class="input-append">
   <form>
     <input id="new-book" class="input-book-add" type="text" placeholder="Create a new book..."
-    /><button id="create" class="btn btn-primary" style="display: none;'  type="submit">Create</button>
+    /><button id="create" class="btn btn-primary" style="display: none;"  type="submit">Create</button>
   </form>
 </div>
 

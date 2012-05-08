@@ -1,3 +1,5 @@
-<a alt="Choose Your Own Misadventure" href="">
-  <img src="images/logo.png"/>
+<a class="logo" alt="Choose Your Own Misadventure" href="">
+  <img class="logo" src="images/logo.png"/>
 </a>
+<div id="login">
+</div>

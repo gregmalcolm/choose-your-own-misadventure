@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="offset3 span6">
+    <div class="hero-unit well-reddish">
+      <div>
+        <label for="email" class="label-login" >Email<label>
+        <input id="email" class="input-reddish input-login" type="text" name="email" placeholder="eg: grue@darkness.net"/>
+      </div>
+      <div>
+        <label for="password" class="label-login">Password<label>
+        <input id="password" class="input-reddish input-login" type="password" name="password" />
+      </div>
+      <div>
+        <button id="button-login" class="btn btn-large btn-inverse" type="button">Log In</button>
+      </div>
+      <br/>
+      <br/>
+    </div>
+  </div>
+</div>
+</div>

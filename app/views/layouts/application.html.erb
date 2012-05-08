@@ -7,12 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
+
+<%= render 'layouts/navigation' %>
+<br/>
 <div class="container">
-  <%= yield %>
   <div id="main">
   </div>  
 </div>
+
+<%= yield %>
 <script type="text/javascript">
   <% if signed_in? -%>
     Misadventure.currentUser = new Misadventure.Models.User(<%= current_user.to_json.html_safe %>);

@@ -18,3 +18,43 @@ body {
 .hidden {
   display: none;
 }
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.well-reddish {
+  color: #884647;
+  background-color: #f0dfd8;
+  border-color: #e9d6c6;
+}
+
+.label-login { 
+  font-size: 140%;
+  line-height: 140%;
+}
+
+.input-login {
+  font-size: 140%;
+  line-height: 140%;  
+  padding: 0.5em;
+  width: 95%;
+}
+
+#button-login {
+  float: right;
+  margin-top: 0.8em;
+}
+
+.input-reddish:focus {
+  border-color: rgba(168, 82, 236, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(168, 82, 236, 0.6);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(168, 82, 236, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(168, 82, 236, 0.6);
+}
