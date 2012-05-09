@@ -2,6 +2,7 @@ class Misadventure.Routers.SiteRouter extends Backbone.Router
   routes:
     '': 'home'
     'login' : 'login'
+    'signup' : 'signup'
 
   home: ->
     if Misadventure.currentUser
@@ -18,4 +19,10 @@ class Misadventure.Routers.SiteRouter extends Backbone.Router
     @loginView ||= new Misadventure.Views.LoginView
       el: $('#login')[0]
     @loginView.render()
+
+  signup: ->
+    @home()
+    @signupView ||= new Misadventure.Views.SignupView
+      el: $('#signup')[0]
+    @signupView.render()
 
