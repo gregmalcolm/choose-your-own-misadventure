@@ -14,15 +14,18 @@ Misadventure.preloaded = {
   books: null
 }
 
-Misadventure.layouts = {}
-
-Misadventure.addRegions { books: '#main' }
+Misadventure.containerRegion = new Backbone.Marionette.Region { el: "#container" }
 
 Misadventure.bind "initialize:after", ->
   preloadedModels = window.preloadModels ? {}
+  
+  Misadventure.layout = new Misadventure.Views.Layouts.Main()
 
-  window.router = new Misadventure.Routers.SiteRouter()
-  Backbone.history.start()
+  Misadventure.containerRegion.show(Misadventure.layout)
+#  Misadventure.Views.Regions.Navigation.show(Misadventure.Views.Navigation)
+
+#  window.router = new Misadventure.Routers.SiteRouter()
+#  Backbone.history.start()
 
 window.Misadventure = Misadventure
 
