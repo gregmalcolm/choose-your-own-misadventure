@@ -1,4 +1,5 @@
-class Misadventure.Views.SignupView extends Backbone.View
+App = window.Misadventure || {}
+class App.Views.Signup extends Backbone.Marionette.ItemView
   template: JST["backbone/templates/signup"] 
 
   render: ->

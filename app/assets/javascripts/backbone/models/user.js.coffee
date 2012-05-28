@@ -1,2 +1,3 @@
-class Misadventure.Models.User extends Backbone.Model
-
+App = window.Misadventure || {}
+class App.Models.User extends Backbone.Model
+  

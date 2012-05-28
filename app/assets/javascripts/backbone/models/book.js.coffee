@@ -1,4 +1,5 @@
-class Misadventure.Models.Book extends Backbone.Model
+App = window.Misadventure || {}
+class App.Models.Book extends Backbone.Model
   url: ->
     if @id
       "/books/#{@id}"

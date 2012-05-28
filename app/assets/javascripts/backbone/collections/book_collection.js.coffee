@@ -1,5 +1,6 @@
-class Misadventure.Collections.BookCollection extends Backbone.Collection
-  model: Misadventure.Models.Book 
+App = window.Misadventure || {}
+class App.Collections.BookCollection extends Backbone.Collection
+  model: App.Models.Book 
   url: -> "/books.json"
 
   comparator: (book) ->
