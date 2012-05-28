@@ -47,4 +47,5 @@ group :development, :test do
   gem 'growl'
   gem 'rb-fsevent'
   gem 'debugger' unless ENV['TRAVIS_RUBY_VERSION']
+  gem 'therubyracer'
 end
