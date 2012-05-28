@@ -1,8 +1,8 @@
 App = window.Misadventure || {}
-class App.Routers.Unauthenticated.HomeRouter extends Backbone.Router
+class App.Routers.HomeRouter extends Backbone.Router
   routes:
     '': 'home'
 
   home: ->
-    App.layout.contentRegion.close()
+    App.layout.contentRegion.show(new App.Views.Books())
      

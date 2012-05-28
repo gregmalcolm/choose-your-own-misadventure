@@ -1,1 +1,4 @@
-<h2>Main</h2>
+<a class="logo" alt="Choose Your Own Misadventure" href="#">
+  <img class="logo" src="images/logo.png" height="40%" width="40%"/>
+</a>
+<div id="content" />

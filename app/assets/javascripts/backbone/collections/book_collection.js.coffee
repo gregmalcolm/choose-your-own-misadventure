@@ -13,6 +13,6 @@ class App.Collections.BookCollection extends Backbone.Collection
 
   #initialize: ->
     #preloadedModels = window.preloadModels ? {}
-    #  router.booksView.model.collection.reset(preloadedModels.books ? {})  
+    #  router.books.model.collection.reset(preloadedModels.books ? {})  
     #console.log(Misadventure.preloadModels)
     #@reset(Misadventure.preloadModels.books ? {})

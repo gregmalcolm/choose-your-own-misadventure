@@ -1,5 +1,5 @@
 App = window.Misadventure || {}
-class App.Views.BooksView extends Backbone.View
+class App.Views.Books extends Backbone.Marionette.ItemView
   template: JST["backbone/templates/books"] 
  
   events:
@@ -20,9 +20,9 @@ class App.Views.BooksView extends Backbone.View
     @newTaskView = new App.Views.NewBookView({model: @model})
     
   render: ->
-    $(@el).html(@template({books: @model.collection}))
-    $('#book-list').append($("<li/>", { html: @newTaskView.render().el }))
-    @ 
+    el = $(@el).html(@template({books: @model.collection}))
+    $('#book-list', el).append($("<li/>", { html: @newTaskView.render().el }))
+    $
   
   mouseEnterBook: (e) -> 
     el=$(e.currentTarget)[0]

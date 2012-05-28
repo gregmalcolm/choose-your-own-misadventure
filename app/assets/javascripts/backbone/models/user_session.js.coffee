@@ -1,20 +1,18 @@
 App = window.Misadventure || {}
-class App.Models.UserRegistration extends Backbone.Model
-  url: '/users.json'
+class App.Models.UserSession extends Backbone.Model
+  url: '/users/sign_in.json'
   paramRoot: 'user'
 
   defaults:
     email: "",
     password: "",
-    password_confirmation: ""
 
   update: ->
     @set 
       email: $('#email').val()
       password: $('#password').val()
-      password_confirmation: $('#confirm-password').val()
 
-  signup: ->
+  login: ->
     @update()
     @save(@attributes,
       success: (userSession, response) ->

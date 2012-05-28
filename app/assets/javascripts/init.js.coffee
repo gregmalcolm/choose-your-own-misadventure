@@ -20,7 +20,15 @@ App.initStructure = ->
   @preloaded =
     books: null
 
-App.bind "initialize:after", ->
+App.vent.on "authentication:logged_in", ->
+  App.layout = App.layouts.authenticated
+  App.containerRegion.show(App.layout)
+
+App.vent.on "authentication:logged_out", ->  
+  App.layout = App.layouts.unauthenticated
+  App.containerRegion.show(App.layout)
+
+App.on "initialize:after", ->
   @containerRegion = new @Regions.Container()
   preloadedModels = window.preloadModels ? {}
     
@@ -28,11 +36,10 @@ App.bind "initialize:after", ->
   @layouts.authenticated = new @Views.Layouts.Authenticated()
     
   if @currentUser
-    @layout = @layouts.authenticated
+    @vent.trigger("authentication:logged_in")
   else
-    @layout = @layouts.unauthenticated
+    @vent.trigger("authentication:logged_out")
 
-  @containerRegion.show(@layout)
   Backbone.history.start()
 
 App.initStructure()
