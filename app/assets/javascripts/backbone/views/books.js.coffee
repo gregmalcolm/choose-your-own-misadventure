@@ -17,7 +17,7 @@ class App.Views.Books extends Backbone.Marionette.ItemView
     @model.on            'change:prevDeleteTarget'    , @hideDeleteButton, @
     @model.on            'change:currentDeleteTarget' , @showDeleteButton, @
 
-    @newTaskView = new App.Views.NewBookView({model: @model})
+    @newTaskView = new App.Views.NewBook({model: @model})
     
   render: ->
     el = $(@el).html(@template({books: @model.collection}))
