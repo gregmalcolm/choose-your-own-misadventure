@@ -1,5 +1,5 @@
 App = window.Misadventure || {}
-class App.Models.UserSession extends Backbone.Model
+class App.Models.UserLogin extends Backbone.Model
   url: '/users/sign_in.json'
   paramRoot: 'user'
 
@@ -23,5 +23,4 @@ class App.Models.UserSession extends Backbone.Model
         console.log userSession
         console.log response
     )
-      
-      
+         

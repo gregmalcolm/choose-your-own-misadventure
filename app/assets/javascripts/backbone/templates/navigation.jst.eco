@@ -2,7 +2,10 @@
   <div class="navbar-inner">
     <div class="container">
       <div class="nav-collapse">
-       <ul class="nav pull-right">        
+        <ul class="nav pull-right">        
+          <li><a href="#signout">Sign Out</a></li>
+        </ul>
+        <ul class="nav pull-right">        
           <li><a href="#login">Log In</a></li>
         </ul>
         <ul class="nav pull-right">        

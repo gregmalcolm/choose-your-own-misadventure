@@ -3,7 +3,7 @@ class App.Views.Login extends Backbone.Marionette.ItemView
   template: JST["backbone/templates/login"]
 
   initialize: ->
-    @model = new App.Models.UserSession()
+    @model = new App.Models.UserLogin()
 
   onRender: ->
     $(@el).html(@template())
@@ -14,4 +14,4 @@ class App.Views.Login extends Backbone.Marionette.ItemView
 
   login: (e) ->
     e.preventDefault()
-    @model.login()    
+    @model.login()
