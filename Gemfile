@@ -8,6 +8,7 @@ gem 'rails', '~> 3.2.1'
 gem 'pg'
 gem 'will_paginate', '~> 3.0'
 gem 'devise'
+gem 'devise-encryptable'
 gem 'thin'
 
 group :test do

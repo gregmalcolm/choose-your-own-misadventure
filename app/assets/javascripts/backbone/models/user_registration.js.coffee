@@ -18,9 +18,7 @@ class App.Models.UserRegistration extends Backbone.Model
     @update()
     @save(@attributes,
       success: (userSession, response) ->
-        console.log "success"
-        console.log userSession
-        console.log response
+        App.currentUser = new App.Models.User(response)
       error: (userSession, response) -> 
         console.log "error"
         console.log userSession
