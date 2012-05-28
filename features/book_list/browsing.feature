@@ -1,4 +1,6 @@
 Feature: Picking a book
+  Background:
+    Given I am authenticated
 
   Scenario: I'm looking for books
     Given there are books
