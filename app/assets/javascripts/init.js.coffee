@@ -1,48 +1,41 @@
 App = new Backbone.Marionette.Application()
+App.initStructure = ->
+  @Views = 
+    Layouts : {}
+    Unauthenticated : {}
 
-App.Views = {}
-App.Views.Layouts = {}
-App.Views.Unauthenticated = {}
+  @Models = {}
+  @Collections = {}
 
-App.Models = {}
-App.Collections = {}
+  @Routers =
+    Unauthenticated : {}
 
-App.Routers = {}
-App.Routers.Unauthenticated = {}
+  @Helpers = {}
 
-App.Helpers = {}
+  @Regions = {}
 
-App.Regions = {}
+  @layouts = {}
+  @routers = {}
 
-App.layouts = {}
-App.routers = {}
-
-App.preloaded = {
-  books: null
-}
+  @preloaded =
+    books: null
 
 App.bind "initialize:after", ->
-  App.containerRegion = new App.Regions.Container()
+  @containerRegion = new @Regions.Container()
   preloadedModels = window.preloadModels ? {}
-  
-  App.layouts.unauthenticated = new App.Views.Layouts.Unauthenticated()
-  App.layouts.authenticated = new App.Views.Layouts.Authenticated()
-  
-  if App.currentUser
-    App.layout = App.layouts.authenticated
+    
+  @layouts.unauthenticated = new @Views.Layouts.Unauthenticated()
+  @layouts.authenticated = new @Views.Layouts.Authenticated()
+    
+  if @currentUser
+    @layout = @layouts.authenticated
   else
-    App.layout = App.layouts.unauthenticated
+    @layout = @layouts.unauthenticated
 
-  App.containerRegion.show(App.layout)
-
-  #if App.currentUser
-    #App.routers.homeRouter = new App.Routers.HomeRouter()
-    #else
-    #App.routers.homeRouter = new App.Routers.Unauthenticated.HomeRouter()
-
-  App.routers.navigationRouter = new App.Routers.NavigationRouter()
+  @containerRegion.show(@layout)
   Backbone.history.start()
 
+App.initStructure()
 window.Misadventure = App
 
 unless window.jasmineSpecsAreRunning
