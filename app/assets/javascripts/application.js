@@ -5,7 +5,6 @@
 // the compiled file.
 //
 //= require vendor
-//= require init_backbone
-//= require backbone/misadventure
+//= require init
 //= require_tree .
 
