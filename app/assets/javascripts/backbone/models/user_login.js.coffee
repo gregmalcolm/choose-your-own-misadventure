@@ -17,7 +17,7 @@ class App.Models.UserLogin extends Backbone.Model
     @save(@attributes,
       success: (userSession, response) ->
         App.currentUser = new App.Models.User(response)
-        App.vent.trigger("authentication:logged_in") 
+        window.location.href = '';
       error: (userSession, response) -> 
         console.log "error"
         console.log userSession

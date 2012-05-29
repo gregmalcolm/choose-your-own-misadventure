@@ -4,3 +4,4 @@ class App.Views.Layouts.Unauthenticated extends App.Views.Layouts.Container
     super
     @mainRegion.show(new App.Views.Unauthenticated.Main)
     App.routers.homeRouter = new App.Routers.Unauthenticated.HomeRouter()
+    

@@ -23,6 +23,7 @@ App.initStructure = ->
 App.vent.on "authentication:logged_in", ->
   App.layout = App.layouts.authenticated
   App.containerRegion.show(App.layout)
+  #window.location.href = '';  
 
 App.vent.on "authentication:logged_out", ->  
   App.layout = App.layouts.unauthenticated
