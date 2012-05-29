@@ -1,7 +1,7 @@
 App = window.Misadventure || {}
-class App.Views.Main extends Backbone.View
+class App.Views.Main extends Backbone.Marionette.ItemView
   template: JST["backbone/templates/main"]
 
-  render: ->
+  onRender: ->
     $(@el).html(@template())
     @
