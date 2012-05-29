@@ -1,7 +1,7 @@
 EnterKey = 13
 
 App = window.Misadventure || {}
-class App.Views.NewBook extends Backbone.View
+class App.Views.Books.NewBook extends Backbone.View
   template: JST["backbone/templates/new_book"] 
 
   events:

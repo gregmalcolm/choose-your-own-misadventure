@@ -5,8 +5,8 @@ data = [
   { "id": 4, "name": "Moo!",                                            "created_at": "March 21, 2012", "updated_at": "March 21, 2012" }
 ]
 
-describe "Misadventure.Models.BookList", ->
-  Given -> @subject = new Misadventure.Models.BookList
+describe "Misadventure.Models.Books.BookList", ->
+  Given -> @subject = new Misadventure.Models.Books.BookList
 
   describe "#addBook", ->
     When -> @subject.addBook("Interview with a Nompire")

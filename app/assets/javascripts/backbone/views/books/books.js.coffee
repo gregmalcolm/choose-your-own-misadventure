@@ -1,5 +1,5 @@
 App = window.Misadventure || {}
-class App.Views.Books extends Backbone.Marionette.ItemView
+class App.Views.Books.Books extends Backbone.Marionette.ItemView
   template: JST["backbone/templates/books"] 
  
   events:
@@ -10,14 +10,14 @@ class App.Views.Books extends Backbone.Marionette.ItemView
 
 
   initialize: ->
-    @model = new App.Models.BookList() 
+    @model = new App.Models.Books.BookList() 
     @model.collection.on 'remove'                     , @render,           @
     @model.collection.on 'change'                     , @render,           @
     @model.collection.on 'reset'                      , @render,           @
     @model.on            'change:prevDeleteTarget'    , @hideDeleteButton, @
     @model.on            'change:currentDeleteTarget' , @showDeleteButton, @
 
-    @newTaskView = new App.Views.NewBook({model: @model})
+    @newTaskView = new App.Views.Books.NewBook({model: @model})
     
   render: ->
     el = $(@el).html(@template({books: @model.collection}))

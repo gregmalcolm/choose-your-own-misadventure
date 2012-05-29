@@ -1,7 +1,7 @@
 App = window.Misadventure || {}
-class App.Models.BookList extends Backbone.Model
+class App.Models.Books.BookList extends Backbone.Model
   initialize: (books) ->
-    @collection = new App.Collections.BookCollection(App.preloaded.books)
+    @collection = new App.Models.Books.BookCollection(App.preloaded.books)
     @on 'change:currentDeleteTarget', @updateDesiredTarget, @
 
   addBook: (nameText) ->

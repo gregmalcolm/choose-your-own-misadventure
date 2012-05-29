@@ -4,5 +4,5 @@ class App.Routers.HomeRouter extends Backbone.Router
     '': 'home'
 
   home: ->
-    App.layout.contentRegion.show(new App.Views.Books())
+    App.layout.contentRegion.show(new App.Views.Books.Books())
      
