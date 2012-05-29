@@ -4,4 +4,4 @@ describe "Misadventure.Views.Books.Books", ->
     model: new Misadventure.Models.Books.BookList
 
   Then -> 
-    expect(@subject.template).toBe(JST["backbone/templates/books"])
+    expect(@subject.template).toBe(JST["backbone/templates/books/books"])
