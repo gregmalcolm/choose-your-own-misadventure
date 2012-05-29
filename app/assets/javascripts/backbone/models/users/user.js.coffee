@@ -1,5 +1,5 @@
 App = window.Misadventure || {}
-class App.Models.User extends Backbone.Model
+class App.Models.Users.User extends Backbone.Model
   url: '/users/sign_out.json'
   paramRoot: 'user'
 

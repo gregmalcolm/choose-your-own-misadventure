@@ -1,9 +1,9 @@
 App = window.Misadventure || {}
-class App.Views.Signup extends Backbone.Marionette.ItemView
-  template: JST["backbone/templates/signup"] 
+class App.Views.Users.Signup extends Backbone.Marionette.ItemView
+  template: JST["backbone/templates/users/signup"] 
 
   initialize: ->
-    @model = new App.Models.UserRegistration()
+    @model = new App.Models.Users.UserRegistration()
 
   onRender: ->
     $(@el).html(@template())

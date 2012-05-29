@@ -1,5 +1,5 @@
 App = window.Misadventure || {}
-class App.Views.Signout extends Backbone.Marionette.ItemView
+class App.Views.Users.Signout extends Backbone.Marionette.ItemView
   template: JST["backbone/templates/blank"]
 
   onRender: ->

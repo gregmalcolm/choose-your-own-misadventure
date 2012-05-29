@@ -1,5 +1,5 @@
 App = window.Misadventure || {}
-class App.Models.UserRegistration extends Backbone.Model
+class App.Models.Users.UserRegistration extends Backbone.Model
   url: '/users.json'
   paramRoot: 'user'
 
@@ -18,7 +18,7 @@ class App.Models.UserRegistration extends Backbone.Model
     @update()
     @save(@attributes,
       success: (userSession, response) ->
-        App.currentUser = new App.Models.User(response)
+        App.currentUser = new App.Models.Users.User(response)
         window.location.href = ''
       error: (userSession, response) -> 
         console.log "error"

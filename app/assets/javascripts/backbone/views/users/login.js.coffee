@@ -1,9 +1,9 @@
 App = window.Misadventure || {}
-class App.Views.Login extends Backbone.Marionette.ItemView
-  template: JST["backbone/templates/login"]
+class App.Views.Users.Login extends Backbone.Marionette.ItemView
+  template: JST["backbone/templates/users/login"]
 
   initialize: ->
-    @model = new App.Models.UserLogin()
+    @model = new App.Models.Users.UserLogin()
 
   onRender: ->
     $(@el).html(@template())

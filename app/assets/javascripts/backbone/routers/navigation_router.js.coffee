@@ -6,13 +6,13 @@ class App.Routers.NavigationRouter extends Backbone.Router
     'signout' : 'signout'
 
   login: ->  
-    App.layout.contentRegion.show(new App.Views.Login())
+    App.layout.contentRegion.show(new App.Views.Users.Login())
 
   signup: -> 
-    App.layout.contentRegion.show(new App.Views.Signup())
+    App.layout.contentRegion.show(new App.Views.Users.Signup())
 
   signout: ->
-    @view = new App.Views.Signout() 
+    @view = new App.Views.Users.Signout() 
     App.layout.contentRegion.show(@view)
     @view.signout()
 

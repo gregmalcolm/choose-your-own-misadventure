@@ -1,5 +1,5 @@
 App = new Backbone.Marionette.Application()
-App.initStructure = ->
+App.initStructure = ->  
   @Views = 
     Layouts: {}
     Unauthenticated: {}

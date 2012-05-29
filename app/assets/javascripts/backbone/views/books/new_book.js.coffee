@@ -2,7 +2,7 @@ EnterKey = 13
 
 App = window.Misadventure || {}
 class App.Views.Books.NewBook extends Backbone.View
-  template: JST["backbone/templates/new_book"] 
+  template: JST["backbone/templates/books/new_book"] 
 
   events:
     'keypress #new-book' : 'keypress'

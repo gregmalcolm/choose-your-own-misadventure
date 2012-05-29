@@ -1,6 +1,6 @@
 App = window.Misadventure || {}
 class App.Views.Books.Books extends Backbone.Marionette.ItemView
-  template: JST["backbone/templates/books"] 
+  template: JST["backbone/templates/books/books"] 
  
   events:
     'mouseenter .book-listing'  : 'mouseEnterBook'

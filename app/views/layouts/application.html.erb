@@ -18,7 +18,7 @@
 <%= yield %>
 <script type="text/javascript">
   <% if signed_in? -%>
-    Misadventure.currentUser = new Misadventure.Models.User(<%= current_user.to_json.html_safe %>);
+    Misadventure.currentUser = new Misadventure.Models.Users.User(<%= current_user.to_json.html_safe %>);
   <% else -%>
     Misadventure.currentUser = null;
   <% end -%>  
