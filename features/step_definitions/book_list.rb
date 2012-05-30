@@ -3,8 +3,8 @@ def po
 end
 
 Given /^there are books$/ do
-  create(:book, :name=>"War and peas")
-  create(:book, :name=>"Where llamas dare")
+  create(:book, :user => current_user, :name=>"War and peas")
+  create(:book, :user => current_user, :name =>"Where llamas dare")
 end
 
 Given /^I am on the books page$/ do
