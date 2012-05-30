@@ -1,7 +1,8 @@
 class CreateBooksTable < ActiveRecord::Migration
   def change
-    create_table :books do |t|
-      t.column :name, :string
+    create_table :books, :force=>true do |t|
+      t.references :user
+      t.string     :name
       t.timestamps
     end
   end

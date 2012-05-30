@@ -3,11 +3,14 @@ class BooksController < ApplicationController
   respond_to :json
 
   def index
-    @books = Book.paginate(:per_page => 20, :page => params[:page]).order('updated_at DESC')
+    @books = Book.paginate(:per_page => 20, :page => params[:page]).
+      where(:user_id => current_user.id).
+      order('updated_at DESC')
   end
 
   def create
     @book = Book.new(params[:book])
+    @book.user = current_user
 
     if @book.save
       respond_with @book, status: :created, location: @book

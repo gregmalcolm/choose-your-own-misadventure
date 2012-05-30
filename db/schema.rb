@@ -14,13 +14,11 @@
 ActiveRecord::Schema.define(:version => 20120507035329) do
 
   create_table "books", :force => true do |t|
+    t.integer  "user_id"
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "books", ["name"], :name => "index_books_on_name"
-  add_index "books", ["updated_at"], :name => "index_books_on_updated_at"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
