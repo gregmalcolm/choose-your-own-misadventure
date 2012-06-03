@@ -37,8 +37,12 @@ $break-dialog: 640px;
   }
   
   .input-login {
+    height: 2.2em;    
     font-size: 140%;
-    line-height: 160%;    
+    line-height: 160%;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
   }
   
   .user-btn-large {
