@@ -6,12 +6,9 @@ $break-dialog: 640px;
 }
 
 .input-login {
-//  padding: 0.5em;
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;  
+  @include box-sizing(border-box);
 }
 
 #login-panel {
@@ -40,18 +37,14 @@ $break-dialog: 640px;
     height: 2.2em;    
     font-size: 140%;
     line-height: 160%;
-    -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-            border-radius: 5px;
+    @include border-radius(5px);
   }
   
   .user-btn-large {
     padding: 9px 14px;
     font-size: 15px;
     line-height: normal;
-    -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-            border-radius: 5px;
+    @include border-radius(5px);
   }
 }
 
@@ -66,5 +59,4 @@ $break-dialog: 640px;
   #login-panel {
     width: auto;
   }
-
 }
