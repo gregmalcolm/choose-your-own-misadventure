@@ -4,8 +4,8 @@ class App.Routers.Unauthenticated.NavbarItemsRouter extends Backbone.Router
     'login'   : 'login'
     'signup'  : 'signup'
 
-  login: ->  
+  login: ->
     App.layout.contentRegion.show(new App.Views.Users.Login())
 
-  signup: -> 
+  signup: ->
     App.layout.contentRegion.show(new App.Views.Users.Signup())

@@ -1,22 +1,21 @@
-<div class="row">
-  <div class="offset3 span6">
-    <div class="hero-unit well-reddish">
-      <form id="login-form">    
+<div id="login-panel">
+  <div class="hero-unit well-reddish">
+    <form id="login-form">    
+      <fieldset>
         <div>
           <label for="email" class="label-login" >Email<label>
           <input id="email" class="input-reddish input-login" type="text" name="email" placeholder="eg: grue@darkness.net"/>
-        </div>
+        <div>
+      </fieldset>
+      <fieldset>
         <div>
           <label for="password" class="label-login">Password<label>
           <input id="password" class="input-reddish input-login" type="password" name="password" />
         </div>
-        <div>
-          <button id="button-login" class="btn btn-large btn-inverse" type="submit">Log In</button>
-        </div>
-      </div>
-      <br/>
-      <br/>
+      </fieldset>
+      <fieldset>
+        <button id="button-login" class="btn btn-large btn-inverse" type="submit">Log In</button>
+      </fieldset>
     </div>
   </div>
-</div>
 </div>

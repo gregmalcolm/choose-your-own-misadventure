@@ -1,6 +1,4 @@
 <ul class="nav pull-right">        
-  <li><a href="#login">Log In</a></li>
-</ul>
-<ul class="nav pull-right">        
   <li><a href="#signup">Sign Up</a></li>
+  <li><a href="#login">Log In</a></li>
 </ul>

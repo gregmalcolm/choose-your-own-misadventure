@@ -1,3 +1,3 @@
-#= require ./container
+#= require ./contain
 #= require_tree .
 

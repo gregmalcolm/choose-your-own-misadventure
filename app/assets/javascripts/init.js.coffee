@@ -25,14 +25,14 @@ App.initStructure = ->
 
 App.vent.on "authentication:logged_in", ->
   App.layout = App.layouts.authenticated
-  App.containerRegion.show(App.layout)
+  App.containRegion.show(App.layout)
 
 App.vent.on "authentication:logged_out", ->  
   App.layout = App.layouts.unauthenticated
-  App.containerRegion.show(App.layout)
+  App.containRegion.show(App.layout)
 
 App.on "initialize:after", ->
-  @containerRegion = new @Regions.Container()
+  @containRegion = new @Regions.Contain()
   preloadedModels = window.preloadModels ? {}
     
   @layouts.unauthenticated = new @Views.Layouts.Unauthenticated()

@@ -1,6 +1,6 @@
 App = window.Misadventure || {}
-class App.Views.Layouts.Container extends Backbone.Marionette.Layout
-  template: JST["backbone/templates/layouts/container"]
+class App.Views.Layouts.Contain extends Backbone.Marionette.Layout
+  template: JST["backbone/templates/layouts/contain"]
 
   regions:
     navigationRegion:  "#navigation"

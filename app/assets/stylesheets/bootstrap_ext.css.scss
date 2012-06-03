@@ -1,0 +1,55 @@
+.well-reddish {
+  color: #884647;
+  background-color: #f0dfd8;
+  border-color: #e9d6c6;
+}
+
+.well-purplish {
+  color: #887246;
+  background-color: #F0E8D8;
+  border-color: #E9DDC6;
+}
+
+.input-reddish:focus {
+  border-color: rgba(168, 82, 236, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(168, 82, 236, 0.6);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(168, 82, 236, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(168, 82, 236, 0.6);
+}
+
+.input-purplish:focus {
+  border-color: rgba(236, 185, 82, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 185, 82, 0.6);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 185, 82, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 185, 82, 0.6);
+}
+
+.icon-90 {
+  background-image: url("../img/glyphicons-halflings-90.png");
+}
+
+.icon-80 {
+  background-image: url("../img/glyphicons-halflings-80.png");
+}
+
+.icon-70 {
+  background-image: url("../img/glyphicons-halflings-70.png");
+}
+
+.navbar .btn-navbar .icon-user {
+  display: block;
+  -webkit-border-radius: 1px;
+     -moz-border-radius: 1px;
+          border-radius: 1px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+     -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}

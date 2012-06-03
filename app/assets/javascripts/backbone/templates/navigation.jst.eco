@@ -1,8 +1,11 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
-    <div class="container">
-      <div class="nav-collapse">
-        <div id="navigation-items" />
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-user icon-80"></span>
+      </a>
+      <a class="brand" href="#">Project name</a>
+      <div id="navigation-items" class="nav-collapse">
       </div>
     </div>
   </div>

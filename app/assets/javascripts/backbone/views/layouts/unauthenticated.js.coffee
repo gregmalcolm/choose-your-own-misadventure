@@ -1,5 +1,5 @@
 App = window.Misadventure || {}
-class App.Views.Layouts.Unauthenticated extends App.Views.Layouts.Container
+class App.Views.Layouts.Unauthenticated extends App.Views.Layouts.Contain
   onShow: (view) ->
     super
     @navbarItemsRegion.show(new App.Views.Unauthenticated.NavbarItems)
