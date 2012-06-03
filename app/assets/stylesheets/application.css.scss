@@ -5,12 +5,6 @@
  *= require vendor
  *= require_tree .
 */
-@media (min-width: 980px) {
-  body {
-    padding-top: 60px;
-    padding-bottom: 40px;
-  }
-}
 
 .input-book-add {
   width: 50%;
@@ -24,6 +18,11 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+@media (min-width: 980px) {
+  body {
+    padding: 60px 6px 40px;
+  }
 }
 
 

@@ -1,5 +1,5 @@
 <div id="login-panel">
-  <div class="hero-unit well-reddish">
+  <div class="well well-reddish">
     <form id="login-form">    
       <fieldset>
         <div>
@@ -14,7 +14,7 @@
         </div>
       </fieldset>
       <fieldset>
-        <button id="button-login" class="btn btn-large btn-inverse" type="submit">Log In</button>
+        <button id="button-login" class="btn user-btn-large btn-inverse" type="submit">Log In</button>
       </fieldset>
     </div>
   </div>
