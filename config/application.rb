@@ -51,9 +51,6 @@ module Misadventure
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.sass.load_paths << File.expand_path('../../app/assets/stylesheets/')
-    config.sass.load_paths << File.expand_path('../../vendor/assets/stylesheets/')
-
     # don't wrap model names in JSON
     ActiveRecord::Base.include_root_in_json = false
   end
