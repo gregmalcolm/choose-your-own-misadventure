@@ -4,7 +4,7 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require bootstrap
  *= require bootstrap-responsive
- *= depend_on _util
+ *= depend_on util
  *= require_self
 */
 
