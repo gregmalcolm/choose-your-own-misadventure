@@ -4,13 +4,153 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require bootstrap
  *= require bootstrap-responsive
- *= depend_on util
  *= require_self
 */
 
-@import 'util';
-//@import 'bootstrap_ext';
-//@import 'user';
+/*
+UTIL
+*/
+
+@mixin well_edge_color($r, $g, $b) {
+  border-color: rgba($r, $g, $b, 0.8);
+  /* IE6-9 */ 
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($r, $g, $b, 0.6);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($r, $g, $b, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($r, $g, $b, 0.6);
+}
+
+@mixin border-radius($vars) {
+  -webkit-border-radius: $vars;
+     -moz-border-radius: $vars;
+          border-radius: $vars;
+}
+
+@mixin box-shadow($vars) {
+  -webkit-box-shadow: $vars;
+     -moz-box-shadow: $vars;
+          box-shadow: $vars;
+}
+
+@mixin box-sizing($vars) {
+  -webkit-box-sizing: $vars;
+     -moz-box-sizing: $vars;
+          box-sizing: $vars;
+}
+
+/*
+BOOTSTRAP EXTENSIONS
+*/
+
+.well-reddish {
+  color: #884647;
+  background-color: #f0dfd8;
+  border-color: #e9d6c6;
+}
+
+.well-purplish {
+  color: #887246;
+  background-color: #F0E8D8;
+  border-color: #E9DDC6;
+}
+
+.input-reddish:focus {
+  @extend .well:focus;
+  @include well_edge_color(168, 82, 236);
+}
+
+.input-purplish:focus {
+  @extend .well:focus;
+  @include well_edge_color(236, 185, 82);
+}
+
+.icon-90 {
+  background-image: url("../img/glyphicons-halflings-90.png");
+}
+
+.icon-80 {
+  background-image: url("../img/glyphicons-halflings-80.png");
+}
+
+.icon-70 {
+  background-image: url("../img/glyphicons-halflings-70.png");
+}
+
+.navbar .btn-navbar .icon-user {
+  display: block;
+  @include border-radius(1px);
+  @include box-shadow(0 1px 0 rgba(0, 0, 0, 0.25));
+}
+
+/*
+USERS
+*/
+
+$break-small: 420px;
+$break-dialog: 640px;
+
+.well {
+  padding-bottom: 2px;
+}
+
+.input-login {
+  width: 100%;
+  height: 100%;
+  @include box-sizing(border-box);
+}
+
+#login-panel {
+  margin: 50px auto;
+  width: 600px;  
+}
+
+#button-login {
+  float: right;
+  margin-top: 8px;
+  border: 0;
+}
+
+@media (min-width: $break-small - 1) {
+  .well {
+    padding: 40px;
+    padding-bottom: 20px;
+  }
+  
+  .label-login { 
+    font-size: 140%;
+    line-height: 160%;
+  }
+  
+  .input-login {
+    height: 2.2em;    
+    font-size: 140%;
+    line-height: 160%;
+    @include border-radius(5px);
+  }
+  
+  .user-btn-large {
+    padding: 9px 14px;
+    font-size: 15px;
+    line-height: normal;
+    @include border-radius(5px);
+  }
+}
+
+@media (max-width: $break-small) {
+
+}
+
+@media (min-width: $break-dialog - 1) {
+}
+
+@media (max-width: $break-dialog) {
+  #login-panel {
+    width: auto;
+  }
+}
+
+/*
+APPLICATION
+*/
 
 .input-book-add {
   width: 50%;
