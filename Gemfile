@@ -10,6 +10,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'devise'
 gem 'devise-encryptable'
 gem 'thin'
+gem 'therubyracer'
 
 group :test do
   gem 'sqlite3'
@@ -49,5 +50,4 @@ group :development, :test do
   gem 'growl'
   gem 'rb-fsevent'
   gem 'debugger' 
-  gem 'therubyracer'
 end
