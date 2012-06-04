@@ -4,12 +4,13 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require bootstrap
  *= require bootstrap-responsive
+ *= depend_on _util
  *= require_self
 */
 
 @import 'util';
-@import 'bootstrap_ext';
-@import 'user';
+//@import 'bootstrap_ext';
+//@import 'user';
 
 .input-book-add {
   width: 50%;
