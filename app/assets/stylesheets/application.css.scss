@@ -47,7 +47,7 @@ BOOTSTRAP EXTENSIONS
   border-color: #e9d6c6;
 }
 
-.well-purplish {
+.well-baige {
   color: #887246;
   background-color: #F0E8D8;
   border-color: #E9DDC6;
@@ -58,7 +58,7 @@ BOOTSTRAP EXTENSIONS
   @include well_edge_color(168, 82, 236);
 }
 
-.input-purplish:focus {
+.input-baige:focus {
   @extend .well:focus;
   @include well_edge_color(236, 185, 82);
 }
@@ -85,22 +85,34 @@ BOOTSTRAP EXTENSIONS
 USERS
 */
 
-$break-small: 420px;
-$break-dialog: 640px;
+$signup-panel-width: 500px;
+$login-panel-width: 500px;
+
+$break-small: 400px;
+$break-login-panel: $login-panel-width + 40px;
+$break-signup-panel: $signup-panel-width + 40px;
+
+@mixin user-panel($width) {
+  margin: 50px auto;
+  width: $width;  
+}
 
 .well {
   padding-bottom: 2px;
 }
 
-.input-login {
+.input-user {
   width: 100%;
   height: 100%;
   @include box-sizing(border-box);
 }
 
 #login-panel {
-  margin: 50px auto;
-  width: 600px;  
+  @include user-panel($login-panel-width);
+}
+
+#signup-panel {
+  @include user-panel($signup-panel-width);
 }
 
 #button-login {
@@ -120,7 +132,7 @@ $break-dialog: 640px;
     line-height: 160%;
   }
   
-  .input-login {
+  .input-user {
     height: 2.2em;    
     font-size: 140%;
     line-height: 160%;
@@ -135,15 +147,14 @@ $break-dialog: 640px;
   }
 }
 
-@media (max-width: $break-small) {
+/*@media (max-width: $break-login-panel) {*/
+  /*#login-panel {*/
+    /*width: auto;*/
+  /*}*/
+/*}*/
 
-}
-
-@media (min-width: $break-dialog - 1) {
-}
-
-@media (max-width: $break-dialog) {
-  #login-panel {
+@media (max-width: $break-signup-panel) {
+  #signup-panel {
     width: auto;
   }
 }
@@ -165,9 +176,14 @@ APPLICATION
   margin-left: auto;
   margin-right: auto;
 }
-@media (min-width: 980px) {
+
+body {
+  padding: 60px 6px 40px;
+}
+
+@media (max-width: 980px) {
   body {
-    padding: 60px 6px 40px;
+    padding: 0px;
   }
 }
 

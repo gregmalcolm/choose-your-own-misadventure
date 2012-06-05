@@ -1,23 +1,29 @@
-<div class="row">
-  <div class="offset3 span6">
-    <div class="hero-unit well-purplish">
-      <form id="signup-form">
+<div id="signup-panel">
+  <div class="well well-baige">
+    <form id="signup-form">
+      <fieldset>
         <div>
           <label for="email" class="label-login" >Email<label>
-          <input id="email" class="input-purplish input-login" type="text" name="email" placeholder="eg: buffy@vampirejabs.org"/>
+          <input id="email" class="input-baige input-user" type="text" name="email" placeholder="eg: buffy@vampirejabs.org"/>
         </div>
+      </fieldset>
+      <fieldset>
         <div>
           <label for="password" class="label-login">Password<label>
-          <input id="password" class="input-purplish input-login" type="password" name="password" />
+          <input id="password" class="input-baige input-user" type="password" name="password" />
         </div>
+      </fieldset>
+      <fieldset>
         <div>
           <label for="confirm-password" class="label-login">Confirm Password<label>
-          <input id="confirm-password" class="input-purplish input-login" type="password" name="confirm-password" />
+          <input id="confirm-password" class="input-baige input-user" type="password" name="confirm-password" />
         </div>
+      </fieldset>
+      <fieldset>
         <div>
           <button id="button-signup" class="btn btn-large btn-inverse" type="submit">Sign Up</button>
         </div>
-      </div>
+      </fieldset>
     </div>
   </div>
 </div>

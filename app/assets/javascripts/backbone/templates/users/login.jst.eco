@@ -4,13 +4,13 @@
       <fieldset>
         <div>
           <label for="email" class="label-login" >Email<label>
-          <input id="email" class="input-reddish input-login" type="text" name="email" placeholder="eg: grue@darkness.net"/>
+          <input id="email" class="input-reddish input-user" type="text" name="email" placeholder="eg: grue@darkness.net"/>
         <div>
       </fieldset>
       <fieldset>
         <div>
           <label for="password" class="label-login">Password<label>
-          <input id="password" class="input-reddish input-login" type="password" name="password" />
+          <input id="password" class="input-reddish input-user" type="password" name="password" />
         </div>
       </fieldset>
       <fieldset>
