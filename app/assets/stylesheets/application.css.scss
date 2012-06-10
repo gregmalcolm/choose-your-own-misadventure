@@ -147,11 +147,11 @@ $break-signup-panel: $signup-panel-width + 40px;
   }
 }
 
-/*@media (max-width: $break-login-panel) {*/
-  /*#login-panel {*/
-    /*width: auto;*/
-  /*}*/
-/*}*/
+@media (max-width: $break-login-panel) {
+  #login-panel {
+    width: auto;
+  }
+}
 
 @media (max-width: $break-signup-panel) {
   #signup-panel {
