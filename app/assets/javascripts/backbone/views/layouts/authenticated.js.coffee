@@ -7,3 +7,4 @@ class App.Views.Layouts.Authenticated extends App.Views.Layouts.Contain
     
     @mainRegion.show(new App.Views.Main)
     App.routers.homeRouter = new App.Routers.HomeRouter()
+    

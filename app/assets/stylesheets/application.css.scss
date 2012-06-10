@@ -97,7 +97,7 @@ $break-signup-panel: $signup-panel-width + 40px;
   width: $width;  
 }
 
-.well {
+.well .users {
   padding-bottom: 2px;
 }
 
@@ -122,7 +122,7 @@ $break-signup-panel: $signup-panel-width + 40px;
 }
 
 @media (min-width: $break-small - 1) {
-  .well {
+  .well .users{
     padding: 40px;
     padding-bottom: 20px;
   }
@@ -160,12 +160,38 @@ $break-signup-panel: $signup-panel-width + 40px;
 }
 
 /*
-APPLICATION
+BOOKS
 */
 
-.input-book-add {
-  width: 50%;
+$books-panel-width: 600px;
+$break-books-panel: $books-panel-width + 20px;
+
+.books-panel {
+  margin: 50px auto;
+  width: $books-panel-width
 }
+
+.input-append .book-input-add {
+  width: 80%;
+  height: 100%;
+  @include box-sizing(border-box);
+}
+
+@media (min-width: $break-books-panel - 1) {
+  .input-append .book-input-add {
+    width: 88%;
+  }
+}
+
+@media (max-width: $break-books-panel) {
+  .books-panel {
+    width: auto;
+  }
+}
+
+/*
+APPLICATION
+*/
 
 .hidden {
   display: none;

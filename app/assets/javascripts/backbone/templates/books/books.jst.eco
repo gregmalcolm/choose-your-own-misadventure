@@ -1,18 +1,20 @@
-<div id="books-wrap" class="span8 offset2">
-  <h2>Books</h2>
-  <div class="well">
-  <% if @books: %>
-    <ul id="book-list" class="unstyled">
-      <% for book in @books.models: %>        
-        <% id = book.get('id') %> 
-        <li>
-          <div id="book-<%= id %>" class="book-listing">
-            <a class="link-book"><%= book.get('name') %></a>
-            <button id="delete-id-<%= id %>" class="btn btn-mini btn-danger button-delete" style="display: none;" type="button">Delete</button>
-          </div>  
-        </li>      
-      <% end %>
-    </ul>
-  <% end %>
+<div class="row-fluid">
+  <div id="books-wrap" class="books-panel">
+    <h2>Books</h2>
+    <div class="well">
+    <% if @books: %>
+      <ul id="book-list" class="unstyled">
+        <% for book in @books.models: %>        
+          <% id = book.get('id') %> 
+          <li>
+            <div id="book-<%= id %>" class="book-listing">
+              <a class="link-book"><%= book.get('name') %></a>
+              <button id="delete-id-<%= id %>" class="btn btn-mini btn-danger button-delete" style="display: none;" type="button">Delete</button>
+            </div>  
+          </li>      
+        <% end %>
+      </ul>
+    <% end %>
+    </div>
   </div>
 </div>

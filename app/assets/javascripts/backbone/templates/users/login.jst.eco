@@ -1,5 +1,5 @@
 <div id="login-panel">
-  <div class="well well-reddish">
+  <div class="well users well-reddish">
     <form id="login-form">    
       <fieldset>
         <div>

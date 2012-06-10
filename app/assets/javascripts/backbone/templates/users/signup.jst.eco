@@ -1,5 +1,5 @@
 <div id="signup-panel">
-  <div class="well well-baige">
+  <div class="well users well-baige">
     <form id="signup-form">
       <fieldset>
         <div>
