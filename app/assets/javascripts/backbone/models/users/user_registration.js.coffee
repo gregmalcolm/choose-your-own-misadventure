@@ -14,16 +14,3 @@ class App.Models.Users.UserRegistration extends Backbone.Model
       password: $('#password').val()
       password_confirmation: $('#confirm-password').val()
 
-  signup: ->
-    @update()
-    @save(@attributes,
-      success: (userSession, response) ->
-        App.currentUser = new App.Models.Users.User(response)
-        window.location.href = ''
-      error: (userSession, response) -> 
-        console.log "error"
-        console.log userSession
-        console.log response
-    )
-      
-      

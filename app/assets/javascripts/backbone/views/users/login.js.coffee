@@ -14,9 +14,9 @@ class App.Views.Users.Login extends Backbone.Marionette.ItemView
     'submit form': 'login'
 
   login: (e) ->
+    self = this
     e.preventDefault()
     @model.update
-    self = this
     @model.save(@attributes,
       success: (userSession, response) ->
         App.currentUser = new App.Models.Users.User(response)
