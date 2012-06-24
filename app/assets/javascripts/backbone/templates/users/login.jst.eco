@@ -1,4 +1,5 @@
 <div id="login-panel">
+  <div id="error-notice"/>
   <div class="well users well-reddish">
     <form id="login-form">    
       <fieldset>

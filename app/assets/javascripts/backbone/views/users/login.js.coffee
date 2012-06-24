@@ -4,6 +4,7 @@ class App.Views.Users.Login extends Backbone.Marionette.ItemView
 
   initialize: ->
     @model = new App.Models.Users.UserLogin()
+    @errorView = new App.Views.ErrorNotice()
 
   onRender: ->
     $(@el).html(@template())
@@ -14,4 +15,12 @@ class App.Views.Users.Login extends Backbone.Marionette.ItemView
 
   login: (e) ->
     e.preventDefault()
-    @model.login()
+    @model.update
+    self = this
+    @model.save(@attributes,
+      success: (userSession, response) ->
+        App.currentUser = new App.Models.Users.User(response)
+        window.location.href = ''
+      error: (userSession, response) ->
+        self.errorView.showError("There was a problem with your login username or password")
+    )
