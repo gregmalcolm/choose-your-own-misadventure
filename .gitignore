@@ -1,0 +1,10 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.sass-cache/
+.DS_Store
+public/assets
+.jhw-cache
+chromedriver.log
+jhw.*.html
