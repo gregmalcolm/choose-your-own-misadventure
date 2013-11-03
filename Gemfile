@@ -25,6 +25,9 @@ group :development, :test do
   gem 'rspec-given'
   gem 'jasmine'
   gem 'jasmine-rails'
+  gem 'cucumber', '1.3.2'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'pry'
   gem 'debugger'
 end
